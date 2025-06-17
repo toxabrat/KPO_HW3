@@ -1,0 +1,10 @@
+/home/anton/Desktop/hse-shop/orders-service/src/main/java/ru/hse/shop/config/OpenApiConfig.java
+/home/anton/Desktop/hse-shop/orders-service/src/main/java/ru/hse/shop/dto/request/AccountDTO.java
+/home/anton/Desktop/hse-shop/orders-service/src/main/java/ru/hse/shop/dto/request/OrderCreateDTO.java
+/home/anton/Desktop/hse-shop/orders-service/src/main/java/ru/hse/shop/repository/OrderRepository.java
+/home/anton/Desktop/hse-shop/orders-service/src/main/java/ru/hse/shop/controller/OrderController.java
+/home/anton/Desktop/hse-shop/orders-service/src/main/java/ru/hse/shop/dto/response/OrderDTO.java
+/home/anton/Desktop/hse-shop/orders-service/src/main/java/ru/hse/shop/model/OrderStatus.java
+/home/anton/Desktop/hse-shop/orders-service/src/main/java/ru/hse/shop/service/OrderService.java
+/home/anton/Desktop/hse-shop/orders-service/src/main/java/ru/hse/shop/OrdersService.java
+/home/anton/Desktop/hse-shop/orders-service/src/main/java/ru/hse/shop/entity/OrderEntity.java
