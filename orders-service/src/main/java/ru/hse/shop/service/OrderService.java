@@ -16,6 +16,12 @@ import ru.hse.shop.dto.response.OrderDTO;
 import ru.hse.shop.entity.OrderEntity;
 import ru.hse.shop.model.OrderStatus;
 import ru.hse.shop.repository.OrderRepository;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.transaction.annotation.Transactional;
+import ru.hse.shop.entity.OrderOutboxEntity;
+import ru.hse.shop.repository.OrderOutboxRepository;
+import java.time.Instant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,32 +31,38 @@ public class OrderService {
     @Autowired
     OrderRepository orderRepository;
 
+    @Autowired
+    OrderOutboxRepository orderOutboxRepository;
+
+    @Autowired
+    private ObjectMapper objectMapper;
+
     @Value("${file.storage.url}")
     private String paymentsService;
 
     private final RestTemplate restTemplate = new RestTemplate();
 
+    @Transactional
     public OrderDTO createOrder(OrderCreateDTO orderDTO) {
-        addAccount(orderDTO.senderId());
-        addAccount(orderDTO.receiverId());
-
-        restTemplate.postForObject(
-                paymentsService + "/balance/write/off/money/" + orderDTO.senderId(),
-                orderDTO.transactionAmount(),
-                AccountDTO.class
-        );
-        restTemplate.postForObject(
-                paymentsService + "/balance/put/money/" + orderDTO.receiverId(),
-                orderDTO.transactionAmount(),
-                AccountDTO.class
-        );
 
         OrderEntity ans = orderRepository.save(
                 OrderEntity.builder()
                         .senderId(orderDTO.senderId())
                         .receiverId(orderDTO.receiverId())
-                        .transactionAmount(orderDTO.transactionAmount()).build()
-        );
+                        .transactionAmount(orderDTO.transactionAmount()).build());
+
+        try {
+            String payload = objectMapper.writeValueAsString(ans);
+            OrderOutboxEntity outbox = OrderOutboxEntity.builder()
+                    .eventType("OrderCreated")
+                    .payload(payload)
+                    .createdAt(Instant.now())
+                    .sent(false)
+                    .build();
+            orderOutboxRepository.save(outbox);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException("Failed to serialize order for outbox", e);
+        }
 
         return buildOrderDTOFromOrderEntity(ans);
     }
@@ -81,8 +93,7 @@ public class OrderService {
         try {
             restTemplate.getForObject(
                     paymentsService + "/balance/" + userId,
-                    AccountDTO.class
-            );
+                    AccountDTO.class);
         } catch (HttpClientErrorException.NotFound e) {
             restTemplate.put(paymentsService + "/balance/" + userId, null);
         }

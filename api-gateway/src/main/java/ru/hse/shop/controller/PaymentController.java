@@ -8,8 +8,6 @@ import ru.hse.shop.service.PaymentService;
 
 import java.util.List;
 
-//вывести всех людей
-//пополнить счет
 @RestController
 @RequestMapping("/api/payments")
 public class PaymentController {

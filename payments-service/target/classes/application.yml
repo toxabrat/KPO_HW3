@@ -20,6 +20,15 @@ spring:
   config:
     activate:
       on-profile: docker
+  kafka:
+    bootstrap-servers: kafka:9092
+    consumer:
+      group-id: payments-service-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
 
 springdoc:
   api-docs:
@@ -36,3 +45,15 @@ logging:
     org.springframework.web: DEBUG
     org.hibernate: DEBUG
     org.example: DEBUG
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: docker
+  datasource:
+    url: jdbc:postgresql://postgres:5432/balance
+    username: balance
+    password: balance
+    driver-class-name: org.postgresql.Driver

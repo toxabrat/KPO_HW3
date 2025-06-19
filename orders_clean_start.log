@@ -1,0 +1,100 @@
+        not(ooe1_0.sent)
+Hibernate: 
+    select
+        ooe1_0.id,
+        ooe1_0.created_at,
+        ooe1_0.event_type,
+        ooe1_0.payload,
+        ooe1_0.sent 
+    from
+        order_outbox ooe1_0 
+    where
+        not(ooe1_0.sent)
+Hibernate: 
+    select
+        ooe1_0.id,
+        ooe1_0.created_at,
+        ooe1_0.event_type,
+        ooe1_0.payload,
+        ooe1_0.sent 
+    from
+        order_outbox ooe1_0 
+    where
+        not(ooe1_0.sent)
+Hibernate: 
+    select
+        ooe1_0.id,
+        ooe1_0.created_at,
+        ooe1_0.event_type,
+        ooe1_0.payload,
+        ooe1_0.sent 
+    from
+        order_outbox ooe1_0 
+    where
+        not(ooe1_0.sent)
+Hibernate: 
+    select
+        ooe1_0.id,
+        ooe1_0.created_at,
+        ooe1_0.event_type,
+        ooe1_0.payload,
+        ooe1_0.sent 
+    from
+        order_outbox ooe1_0 
+    where
+        not(ooe1_0.sent)
+Hibernate: 
+    select
+        ooe1_0.id,
+        ooe1_0.created_at,
+        ooe1_0.event_type,
+        ooe1_0.payload,
+        ooe1_0.sent 
+    from
+        order_outbox ooe1_0 
+    where
+        not(ooe1_0.sent)
+Hibernate: 
+    select
+        ooe1_0.id,
+        ooe1_0.created_at,
+        ooe1_0.event_type,
+        ooe1_0.payload,
+        ooe1_0.sent 
+    from
+        order_outbox ooe1_0 
+    where
+        not(ooe1_0.sent)
+Hibernate: 
+    select
+        ooe1_0.id,
+        ooe1_0.created_at,
+        ooe1_0.event_type,
+        ooe1_0.payload,
+        ooe1_0.sent 
+    from
+        order_outbox ooe1_0 
+    where
+        not(ooe1_0.sent)
+Hibernate: 
+    select
+        ooe1_0.id,
+        ooe1_0.created_at,
+        ooe1_0.event_type,
+        ooe1_0.payload,
+        ooe1_0.sent 
+    from
+        order_outbox ooe1_0 
+    where
+        not(ooe1_0.sent)
+Hibernate: 
+    select
+        ooe1_0.id,
+        ooe1_0.created_at,
+        ooe1_0.event_type,
+        ooe1_0.payload,
+        ooe1_0.sent 
+    from
+        order_outbox ooe1_0 
+    where
+        not(ooe1_0.sent)

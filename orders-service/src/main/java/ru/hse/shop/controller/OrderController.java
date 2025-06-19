@@ -21,7 +21,7 @@ public class OrderController {
     @PutMapping("/add")
     public ResponseEntity<OrderDTO> addOrder(@RequestBody OrderCreateDTO orderDTO) {
         OrderDTO ans = orderService.createOrder(orderDTO);
-        return  ResponseEntity.ok()
+        return ResponseEntity.ok()
                 .body(ans);
     }
 

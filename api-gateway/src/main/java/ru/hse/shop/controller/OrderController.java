@@ -10,14 +10,12 @@ import ru.hse.shop.service.OrderService;
 
 import java.util.List;
 
-//перевести деньги
-//вывести все заказы
-//поменять статус
 @RestController
 @RequestMapping("/api/orders")
 public class OrderController {
     @Autowired
     private OrderService orderService;
+
     @GetMapping("/all")
     public ResponseEntity<List<OrderDTO>> allOrder() {
         List<OrderDTO> ans = orderService.allOrders();
@@ -35,7 +33,7 @@ public class OrderController {
     @PutMapping("/add")
     public ResponseEntity<OrderDTO> addOrder(@RequestBody OrderCreateDTO orderDTO) {
         OrderDTO ans = orderService.createOrder(orderDTO);
-        return  ResponseEntity.ok()
+        return ResponseEntity.ok()
                 .body(ans);
     }
 }

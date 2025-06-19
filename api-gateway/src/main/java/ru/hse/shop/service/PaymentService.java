@@ -38,7 +38,7 @@ public class PaymentService {
 
     public AccountDTO putMoney(Long id, Long amount) {
         return restTemplate.postForObject(
-                paymentsService + "/balance//put/money/" + id,
+                paymentsService + "/balance/put/money/" + id,
                 new HttpEntity<>(amount),
                 AccountDTO.class
         );

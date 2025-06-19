@@ -59,5 +59,4 @@ public class AccountService {
     private AccountDTO buildAccountDTOFromEntity(AccountEntity accountEntity) {
         return new AccountDTO(accountEntity.getUserId(), accountEntity.getAccount());
     }
-    //ну тут мб кафка будет
 }

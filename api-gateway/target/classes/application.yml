@@ -14,9 +14,9 @@ spring:
 
 services:
   orders-service:
-    url: http://localhost:8082
+    url: http://orders-service:8082
   payments-service:
-    url: http://localhost:8080
+    url: http://payments-service:8080
 
 springdoc:
   api-docs:
