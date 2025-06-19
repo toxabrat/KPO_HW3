@@ -27,4 +27,10 @@ public class PaymentController {
         return ResponseEntity.ok()
                 .body(ans);
     }
+
+    @PutMapping("/new/{id}")
+    public ResponseEntity<AccountDTO> newAccount(@PathVariable Long id) {
+        AccountDTO ans = paymentService.newAccount(id);
+        return ResponseEntity.ok().body(ans);
+    }
 }

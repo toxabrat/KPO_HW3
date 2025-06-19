@@ -37,7 +37,7 @@ public class AccountService {
             accountEntity.setAccount(accountEntity.getAccount() + amount);
             return buildAccountDTOFromEntity(accountRepository.save(accountEntity));
         } else {
-            throw new EntityNotFoundException("user undefined");
+            throw new BadRequestException("user undefined");
         }
     }
 
@@ -52,7 +52,7 @@ public class AccountService {
             accountEntity.setAccount(accountEntity.getAccount() - amount);
             return buildAccountDTOFromEntity(accountRepository.save(accountEntity));
         } else {
-            throw new EntityNotFoundException("user undefined");
+            throw new BadRequestException("user undefined");
         }
     }
 

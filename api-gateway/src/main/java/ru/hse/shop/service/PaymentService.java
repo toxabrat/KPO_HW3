@@ -44,4 +44,13 @@ public class PaymentService {
         );
     }
 
+    public AccountDTO newAccount(Long id) {
+        return restTemplate.exchange(
+                paymentsService + "/balance/" + id,
+                HttpMethod.PUT,
+                null,
+                AccountDTO.class
+        ).getBody();
+    }
+
 }
