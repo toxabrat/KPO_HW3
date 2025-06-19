@@ -33,6 +33,6 @@ public class PaymentResultKafkaListener {
                 order.setStatus(OrderStatus.FAILED);
             }
             orderRepository.save(order);
-        } catch (Exception _) { }
+        } catch (Exception e) { }
     }
 }

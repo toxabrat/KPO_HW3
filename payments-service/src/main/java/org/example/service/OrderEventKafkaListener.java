@@ -55,10 +55,8 @@ public class OrderEventKafkaListener {
             accountService.writeOffMoney(order.getSenderId(), order.getTransactionAmount());
             accountService.putMoney(order.getReceiverId(), order.getTransactionAmount());
             success = true;
-        } catch (Exception _) { }
-        log.info("Payment");
+        } catch (Exception e) { }
         String resultType = success ? "OrderPaymentSuccess" : "OrderPaymentFailed";
-        log.info(resultType);
 
         String resultPayload;
         try {

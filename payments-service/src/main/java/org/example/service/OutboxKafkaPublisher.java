@@ -31,7 +31,7 @@ public class OutboxKafkaPublisher {
                 kafkaTemplate.send(topic, event.getPayload());
                 event.setSent(true);
                 outboxRepo.save(event);
-            } catch (Exception _) { }
+            } catch (Exception e) { }
         }
     }
 } 

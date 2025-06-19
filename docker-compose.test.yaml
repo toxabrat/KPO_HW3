@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  orders-service-test:
+    image: maven:3.9.6-eclipse-temurin-21
+    working_dir: /app/orders-service
+    volumes:
+      - .:/app
+      - ~/.m2:/root/.m2
+    command: mvn clean test
+    environment:
+      - SPRING_PROFILES_ACTIVE=test
+
+  payments-service-test:
+    image: maven:3.9.6-eclipse-temurin-21
+    working_dir: /app/payments-service
+    volumes:
+      - .:/app
+      - ~/.m2:/root/.m2
+    command: mvn clean test
+    environment:
+      - SPRING_PROFILES_ACTIVE=test 

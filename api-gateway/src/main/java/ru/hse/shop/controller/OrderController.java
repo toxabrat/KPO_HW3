@@ -7,6 +7,8 @@ import ru.hse.shop.dto.OrderCreateDTO;
 import ru.hse.shop.dto.OrderDTO;
 import ru.hse.shop.model.OrderStatus;
 import ru.hse.shop.service.OrderService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 
 import java.util.List;
 
@@ -16,6 +18,7 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    @Operation(summary = "Получить все заказы", description = "Возвращает список всех заказов.")
     @GetMapping("/all")
     public ResponseEntity<List<OrderDTO>> allOrder() {
         List<OrderDTO> ans = orderService.allOrders();
@@ -23,13 +26,17 @@ public class OrderController {
                 .body(ans);
     }
 
+    @Operation(summary = "Установить статус заказа", description = "Устанавливает статус заказа по id. Возможные значения статуса: CREATED, COMPLETED, FAILED.")
     @PostMapping("/status/{id}")
-    public ResponseEntity<OrderDTO> setStatus(@PathVariable Long id, @RequestBody OrderStatus status) {
+    public ResponseEntity<OrderDTO> setStatus(
+            @Parameter(description = "ID заказа") @PathVariable Long id,
+            @Parameter(description = "Статус заказа (CREATED, COMPLETED, FAILED)") @RequestBody OrderStatus status) {
         OrderDTO ans = orderService.setStatus(id, status);
         return ResponseEntity.ok()
                 .body(ans);
     }
 
+    @Operation(summary = "Создать заказ", description = "Создаёт новый заказ. В теле запроса указываются senderId, receiverId, transactionAmount.")
     @PutMapping("/add")
     public ResponseEntity<OrderDTO> addOrder(@RequestBody OrderCreateDTO orderDTO) {
         OrderDTO ans = orderService.createOrder(orderDTO);

@@ -32,7 +32,7 @@ public class OrderOutboxKafkaPublisher {
                 kafkaTemplate.send(topic, event.getPayload());
                 event.setSent(true);
                 outboxRepository.save(event);
-            } catch (Exception _) { }
+            } catch (Exception e) { }
         }
     }
 }
