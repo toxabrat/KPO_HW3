@@ -11,8 +11,8 @@
 - Автоматически обновлять статусы заказов и балансы
 
 #### Сервисы
-- Payment Service (порт: 8080)
 - Order Service (порт: 8082)
+- Payment Service (порт: 8080)
 - API Gateway (порт: 8084)
 - Frontend (порт: 8081)
 
@@ -22,15 +22,9 @@
 После запуска сервисов потребуется немного подождать, пока Kafka и сервисы полностью инициализируются и начнут корректно обрабатывать переводы и заказы.
 
 #### Запуск всех сервисов
-если не хотите пересобирать проект то:
 ```bash
 ./build-and-run.sh
 ```
-если хотите пересобрать:
-```bash
-./build-and-run.sh --build
-```
-
 
 #### Запуск тестов
 Для запуска тестов используйте:
@@ -40,11 +34,7 @@ docker-compose -f docker-compose.test.yaml up --build
 
 #### API Документация
 После запуска, Swagger UI доступен по адресам:
-- Order Service: http://localhost:8082/swagger-ui/index.html
-- Payment Service: http://localhost:8080/swagger-ui/index.html
-- API Gateway: http://localhost:8084/swagger-ui/index.html
+- Order Service: http://localhost:8084/swagger-ui/index.html
+- Payment Service: http://localhost:8085/swagger-ui/index.html
+- API Gateway: http://localhost:8086/swagger-ui/index.html
 
-
-### Frontend
-
-http://localhost:8081

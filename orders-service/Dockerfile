@@ -1,9 +1,12 @@
-FROM openjdk:23-jdk-slim
-
+FROM maven:3.9.6-eclipse-temurin-21 as build
 WORKDIR /app
+COPY . .
+RUN mvn clean package -DskipTests
 
-COPY target/orders-service-1.0-SNAPSHOT.jar app.jar
+FROM eclipse-temurin:21-jre
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
 
 EXPOSE 8082
-
+ENV SPRING_PROFILES_ACTIVE=docker
 ENTRYPOINT ["java", "-jar", "app.jar"] 
