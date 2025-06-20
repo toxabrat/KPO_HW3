@@ -37,14 +37,6 @@ public class OrderService {
         return response.getBody();
     }
 
-    public OrderDTO setStatus(Long id, OrderStatus status) {
-        return restTemplate.postForObject(
-                ordersService + "/orders/status/" + id,
-                status,
-                OrderDTO.class
-        );
-    }
-
     public OrderDTO createOrder(OrderCreateDTO orderDTO) {
         ResponseEntity<OrderDTO> response = restTemplate.exchange(
                 ordersService + "/orders/add",

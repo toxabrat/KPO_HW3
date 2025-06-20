@@ -26,16 +26,6 @@ public class OrderController {
                 .body(ans);
     }
 
-    @Operation(summary = "Установить статус заказа", description = "Устанавливает статус заказа по id. Возможные значения статуса: CREATED, COMPLETED, FAILED.")
-    @PostMapping("/status/{id}")
-    public ResponseEntity<OrderDTO> setStatus(
-            @Parameter(description = "ID заказа") @PathVariable Long id,
-            @Parameter(description = "Статус заказа (CREATED, COMPLETED, FAILED)") @RequestBody OrderStatus status) {
-        OrderDTO ans = orderService.setStatus(id, status);
-        return ResponseEntity.ok()
-                .body(ans);
-    }
-
     @Operation(summary = "Создать заказ", description = "Создаёт новый заказ. В теле запроса указываются senderId, receiverId, transactionAmount.")
     @PutMapping("/add")
     public ResponseEntity<OrderDTO> addOrder(@RequestBody OrderCreateDTO orderDTO) {

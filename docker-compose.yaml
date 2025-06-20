@@ -98,6 +98,17 @@ services:
     volumes:
       - kafka_data:/var/lib/kafka/data
 
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8081:80"
+    networks:
+      - hse-shop-network
+    depends_on:
+      - api-gateway
+
 volumes:
   postgres_data:
   kafka_data:

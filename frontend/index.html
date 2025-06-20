@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSE Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>HSE Shop</h1>
+    <section>
+        <h2>Заказы</h2>
+        <form id="order-form">
+            <input type="number" id="senderId" placeholder="ID отправителя" required>
+            <input type="number" id="receiverId" placeholder="ID получателя" required>
+            <input type="number" id="transactionAmount" placeholder="Сумма" required>
+            <button type="submit">Создать заказ</button>
+        </form>
+        <table id="orders-table">
+            <thead>
+                <tr>
+                    <th>ID</th><th>Отправитель</th><th>Получатель</th><th>Сумма</th><th>Статус</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+    <section>
+        <h2>Аккаунты</h2>
+        <form id="account-form">
+            <input type="number" id="newAccountId" placeholder="ID пользователя" required>
+            <button type="submit">Создать аккаунт</button>
+        </form>
+        <form id="put-money-form">
+            <input type="number" id="putMoneyId" placeholder="ID пользователя" required>
+            <input type="number" id="putMoneyAmount" placeholder="Сумма" required>
+            <button type="submit">Пополнить</button>
+        </form>
+        <table id="accounts-table">
+            <thead>
+                <tr>
+                    <th>ID пользователя</th><th>Баланс</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+    <script src="app.js"></script>
+</body>
+</html> 
