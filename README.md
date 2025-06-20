@@ -34,7 +34,7 @@ docker-compose -f docker-compose.test.yaml up --build
 
 #### API Документация
 После запуска, Swagger UI доступен по адресам:
-- Order Service: http://localhost:8084/swagger-ui/index.html
-- Payment Service: http://localhost:8085/swagger-ui/index.html
-- API Gateway: http://localhost:8086/swagger-ui/index.html
+- Order Service: http://localhost:8082/swagger-ui/index.html
+- Payment Service: http://localhost:8080/swagger-ui/index.html
+- API Gateway: http://localhost:8084/swagger-ui/index.html
 
