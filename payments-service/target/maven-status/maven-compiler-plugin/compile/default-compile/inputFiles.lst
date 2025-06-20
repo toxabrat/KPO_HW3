@@ -1,0 +1,15 @@
+/app/payments-service/src/main/java/org/example/config/OpenApiConfig.java
+/app/payments-service/src/main/java/org/example/repository/AccountRepository.java
+/app/payments-service/src/main/java/org/example/dto/OrderEventDTO.java
+/app/payments-service/src/main/java/org/example/dto/AccountDTO.java
+/app/payments-service/src/main/java/org/example/entity/InboxEventEntity.java
+/app/payments-service/src/main/java/org/example/controller/AccountController.java
+/app/payments-service/src/main/java/org/example/dto/PaymentResultDTO.java
+/app/payments-service/src/main/java/org/example/service/OutboxKafkaPublisher.java
+/app/payments-service/src/main/java/org/example/service/OrderEventKafkaListener.java
+/app/payments-service/src/main/java/org/example/entity/AccountEntity.java
+/app/payments-service/src/main/java/org/example/PaymentsService.java
+/app/payments-service/src/main/java/org/example/service/AccountService.java
+/app/payments-service/src/main/java/org/example/repository/InboxEventRepository.java
+/app/payments-service/src/main/java/org/example/entity/OutboxEventEntity.java
+/app/payments-service/src/main/java/org/example/repository/OutboxEventRepository.java

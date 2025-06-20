@@ -1,0 +1,15 @@
+/app/orders-service/src/main/java/ru/hse/shop/dto/response/OrderDTO.java
+/app/orders-service/src/main/java/ru/hse/shop/service/OrderOutboxKafkaPublisher.java
+/app/orders-service/src/main/java/ru/hse/shop/entity/OrderOutboxEntity.java
+/app/orders-service/src/main/java/ru/hse/shop/controller/OrderController.java
+/app/orders-service/src/main/java/ru/hse/shop/service/OrderService.java
+/app/orders-service/src/main/java/ru/hse/shop/entity/OrderEntity.java
+/app/orders-service/src/main/java/ru/hse/shop/service/PaymentResultKafkaListener.java
+/app/orders-service/src/main/java/ru/hse/shop/repository/OrderOutboxRepository.java
+/app/orders-service/src/main/java/ru/hse/shop/config/OpenApiConfig.java
+/app/orders-service/src/main/java/ru/hse/shop/model/OrderStatus.java
+/app/orders-service/src/main/java/ru/hse/shop/OrdersService.java
+/app/orders-service/src/main/java/ru/hse/shop/dto/request/AccountDTO.java
+/app/orders-service/src/main/java/ru/hse/shop/dto/request/OrderCreateDTO.java
+/app/orders-service/src/main/java/ru/hse/shop/repository/OrderRepository.java
+/app/orders-service/src/main/java/ru/hse/shop/dto/PaymentResultDTO.java

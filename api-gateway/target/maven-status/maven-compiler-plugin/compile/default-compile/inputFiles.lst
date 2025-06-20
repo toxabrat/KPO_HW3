@@ -1,0 +1,11 @@
+/home/anton/Desktop/KPO_HW3/api-gateway/src/main/java/ru/hse/shop/ApiGateway.java
+/home/anton/Desktop/KPO_HW3/api-gateway/src/main/java/ru/hse/shop/dto/OrderDTO.java
+/home/anton/Desktop/KPO_HW3/api-gateway/src/main/java/ru/hse/shop/config/CorsConfig.java
+/home/anton/Desktop/KPO_HW3/api-gateway/src/main/java/ru/hse/shop/service/OrderService.java
+/home/anton/Desktop/KPO_HW3/api-gateway/src/main/java/ru/hse/shop/config/OpenApiConfig.java
+/home/anton/Desktop/KPO_HW3/api-gateway/src/main/java/ru/hse/shop/service/PaymentService.java
+/home/anton/Desktop/KPO_HW3/api-gateway/src/main/java/ru/hse/shop/dto/AccountDTO.java
+/home/anton/Desktop/KPO_HW3/api-gateway/src/main/java/ru/hse/shop/dto/OrderCreateDTO.java
+/home/anton/Desktop/KPO_HW3/api-gateway/src/main/java/ru/hse/shop/model/OrderStatus.java
+/home/anton/Desktop/KPO_HW3/api-gateway/src/main/java/ru/hse/shop/controller/PaymentController.java
+/home/anton/Desktop/KPO_HW3/api-gateway/src/main/java/ru/hse/shop/controller/OrderController.java

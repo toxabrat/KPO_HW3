@@ -1,14 +1,12 @@
 #!/bin/bash
 
-echo "Building all services..."
-
-mvn clean package -DskipTests
-
-echo "Building Docker images..."
+if [[ "$1" == "--build" ]]; then
+  mvn clean package -DskipTests
+else
+  echo "Skipping Maven build. Using existing jar files."
+fi
 
 docker-compose build
-
-echo "Starting all services..."
 
 docker-compose up -d
 
@@ -20,4 +18,4 @@ echo "Frontend: http://localhost:8081"
 echo "PostgreSQL: localhost:5432"
 
 echo "To view logs: docker-compose logs -f"
-echo "To stop services: docker-compose down" 
+echo "To stop services: docker-compose down"

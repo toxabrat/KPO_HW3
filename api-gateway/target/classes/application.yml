@@ -1,0 +1,28 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: api-gateway
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  config:
+    activate:
+      on-profile: docker
+
+services:
+  orders-service:
+    url: http://orders-service:8082
+  payments-service:
+    url: http://payments-service:8080
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    configUrl: /v3/api-docs/swagger-config
+    url: /v3/api-docs
